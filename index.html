@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggarwal's Mart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-bag-shopping"></i> Aggarwal's Mart</h1>
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart (<span id="cart-count">0</span>)
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Aggarwal's Mart</h2>
+        <p>Discover your favourite products at the best prices.</p>
+        <a href="#products" class="shop-btn">Shop Now</a>
+    </section>
+
+    <main>
+        <section id="products">
+            <h2><i class="fa-solid fa-store"></i> Our Products</h2>
+
+            <div class="filters">
+                <select id="category">
+                    <option value="All">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Accessories">Accessories</option>
+                </select>
+
+                <select id="sort">
+                    <option value="default">Sort By</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+            </div>
+
+            <div id="product-list" class="product-list"></div>
+        </section>
+
+        <section id="cart">
+            <h2><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</h2>
+
+            <div id="cart-items"></div>
+
+            <div class="summary">
+                <p>Subtotal: <span id="subtotal">₹0</span></p>
+                <p>Discount: <span id="discount">₹0</span></p>
+                <h3>Total: <span id="total">₹0</span></h3>
+
+                <div class="coupon">
+                    <input type="text" id="coupon-code"
+                        placeholder="Enter coupon code">
+                    <button id="apply-coupon">
+                        <i class="fa-solid fa-ticket"></i> Apply
+                    </button>
+                </div>
+
+                <p id="coupon-message"></p>
+
+                <button id="checkout-btn" class="checkout-btn">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Proceed to Checkout
+                </button>
+            </div>
+        </section>
+
+        <section id="checkout" class="checkout hidden">
+            <h2><i class="fa-solid fa-truck-fast"></i> Checkout</h2>
+
+            <form id="checkout-form">
+                <label for="customer-name">Full Name</label>
+                <input type="text" id="customer-name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+
+                <label for="address">Delivery Address</label>
+                <textarea id="address" required></textarea>
+
+                <label for="payment">Payment Method</label>
+                <select id="payment" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="COD">Cash on Delivery</option>
+                    <option value="UPI">UPI (Demo)</option>
+                    <option value="Card">Credit/Debit Card (Demo)</option>
+                </select>
+
+                <h3>Order Total: <span id="checkout-total">₹0</span></h3>
+
+                <button type="submit" class="checkout-btn">
+                    <i class="fa-solid fa-check"></i> Place Order
+                </button>
+            </form>
+
+            <p id="order-message"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
